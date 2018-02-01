@@ -16,7 +16,7 @@
      (org.neo4j.graphdb.event TransactionEventHandler
                               PropertyEntry
                               TransactionData)
-     (org.neo4j.index.lucene LuceneFulltextIndexService)
+     ;; (org.neo4j.index.lucene LuceneFulltextIndexService)
      (org.neo4j.helpers Predicate)))
 
 ; Protocols
@@ -48,7 +48,7 @@
 ; Neo Database
 
 (def ^GraphDatabaseFactory *neo* nil)
-(def ^LuceneFulltextIndexService *lucene* nil)
+;; (def ^LuceneFulltextIndexService *lucene* nil)
 (def ^Transaction *tx* nil)
 
 (def *named-relations* {})
@@ -62,7 +62,7 @@
   [path]
   (do
     (alter-var-root #'*neo* (fn [_] (GraphDatabaseFactory. path)))
-    (alter-var-root #'*lucene* (fn [_] (LuceneFulltextIndexService. *neo*)))
+    ;; (alter-var-root #'*lucene* (fn [_] (LuceneFulltextIndexService. *neo*)))
     (attach-index-handler)))
 
 (defn stop
