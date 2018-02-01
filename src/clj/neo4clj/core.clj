@@ -17,7 +17,8 @@
                               PropertyEntry
                               TransactionData)
      ;; (org.neo4j.index.lucene LuceneFulltextIndexService)
-     (org.neo4j.helpers Predicate)))
+     ;; (org.neo4j.helpers Predicate)
+     ))
 
 ; Protocols
 
