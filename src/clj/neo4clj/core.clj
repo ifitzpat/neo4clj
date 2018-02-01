@@ -12,7 +12,7 @@
      (org.neo4j.graphdb.traversal TraversalDescription
                                   Traverser
                                   TraversalBranch
-                                  PruneEvaluator)
+                                  Evaluator)
      (org.neo4j.graphdb.event TransactionEventHandler
                               PropertyEntry
                               TransactionData)
@@ -186,11 +186,11 @@
       (accept [_ item] (f item))))
 
 (defn pruner
-  "Returns a PruneEvaluator wrapping of f for use with
+  "Returns a Evaluator wrapping of f for use with
   TraversalDescription.prune"
   [f]
   (reify
-    PruneEvaluator
+    Evaluator
       (^boolean pruneAfter [_ ^Path path] (f path))))
 
 (defn where
